@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B677FA11A06213D00B406CB /* head@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B677FA01A06213D00B406CB /* head@2x.png */; };
+		2B677FA31A06275C00B406CB /* login_act_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B677FA21A06275C00B406CB /* login_act_icon@2x.png */; };
 		31EE47661A03942C0025FA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE47651A03942C0025FA34 /* AppDelegate.swift */; };
 		31EE47681A03942C0025FA34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE47671A03942C0025FA34 /* ViewController.swift */; };
 		31EE476B1A03942C0025FA34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EE47691A03942C0025FA34 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B677FA01A06213D00B406CB /* head@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head@2x.png"; sourceTree = "<group>"; };
+		2B677FA21A06275C00B406CB /* login_act_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_act_icon@2x.png"; sourceTree = "<group>"; };
 		31EE47601A03942C0025FA34 /* OurWeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurWeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31EE47641A03942C0025FA34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31EE47651A03942C0025FA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B677F9D1A0620D300B406CB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2B677FA21A06275C00B406CB /* login_act_icon@2x.png */,
+				2B677FA01A06213D00B406CB /* head@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		31EE47571A03942C0025FA34 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +95,7 @@
 				31EE47691A03942C0025FA34 /* Main.storyboard */,
 				31EE476C1A03942C0025FA34 /* Images.xcassets */,
 				31EE476E1A03942C0025FA34 /* LaunchScreen.xib */,
+				2B677F9D1A0620D300B406CB /* Resource */,
 				31EE47631A03942C0025FA34 /* Supporting Files */,
 			);
 			path = OurWeChat;
@@ -194,6 +208,8 @@
 			files = (
 				31EE476B1A03942C0025FA34 /* Main.storyboard in Resources */,
 				31EE47701A03942C0025FA34 /* LaunchScreen.xib in Resources */,
+				2B677FA11A06213D00B406CB /* head@2x.png in Resources */,
+				2B677FA31A06275C00B406CB /* login_act_icon@2x.png in Resources */,
 				31EE476D1A03942C0025FA34 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,9 +352,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OurWeChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +365,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OurWeChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -405,6 +426,7 @@
 				31EE47811A03942C0025FA34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31EE47821A03942C0025FA34 /* Build configuration list for PBXNativeTarget "OurWeChatTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +435,7 @@
 				31EE47841A03942C0025FA34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
