@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIAlertViewDelegate, UIActionSheetDelegate {
 
     //MARK: IBOutlet
     @IBOutlet var headImgv: UIImageView!
@@ -41,16 +41,17 @@ class ViewController: UIViewController {
         pwdView.layer.borderWidth = 1.0
         pwdView.layer.borderColor = UIColor.lightGrayColor().CGColor
         pwdView.layer.cornerRadius = 5.0
-        pwdView.layer.masksToBounds = true
+        pwdView.layer.masksToBounds = true          //这项很重要
         
         //设置登录按钮样式
         loginBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
         loginBtn.layer.borderWidth = 0.5
         loginBtn.layer.cornerRadius = 5.0
         loginBtn.layer.masksToBounds = true
+        loginBtn.setBackgroundImage(self.image(UIColor(red: 72.0 / 255.0, green: 176.0 / 255.0, blue: 0 / 255.0, alpha: 1)), forState: UIControlState.Normal)
         
         //注册按钮
-        registerBtn.setBackgroundImage(self.image(UIColor.whiteColor()), forState: UIControlState.Normal)
+        registerBtn.setBackgroundImage(UIImage(color: UIColor.whiteColor()), forState: UIControlState.Normal)
         registerBtn.layer.borderWidth = 0.5
         registerBtn.layer.borderColor = UIColor.lightGrayColor().CGColor
         registerBtn.layer.cornerRadius = 5.0
@@ -69,18 +70,28 @@ class ViewController: UIViewController {
     //MARK: IBAction
     @IBAction func loginBtnTi(sender: UIButton) {
         println("login")
+        
+        self.performSegueWithIdentifier("TabBarCtrl", sender: self)
     }
     
     @IBAction func registerBtnTi(sender: UIButton) {
         println("register")
+        
+//        self.performSegueWithIdentifier("", sender: self)
     }
     
     @IBAction func chageActBtnTi(sender: UIButton) {
         println("chage account")
+        
+        let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "手机号", "微信号/邮箱地址/QQ号")
+        actionSheet.showInView(self.view)
     }
     
     @IBAction func loginIssueBtnTi(sender: UIButton) {
         println("login issue")
+        
+        let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "找回微信密码", "找回QQ密码", "通过短信验证码登录", "前往微信安全中心")
+        actionSheet.showInView(self.view)
     }
     
     
@@ -104,7 +115,28 @@ class ViewController: UIViewController {
         return image!;
     }
     
-    //MARK: Delegate
+    //MARK: UIActionSheetDelegate
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if actionSheet.buttonTitleAtIndex(buttonIndex) == "手机号" {
+            println("手机号")
+        }
+        else if actionSheet.buttonTitleAtIndex(buttonIndex) == "微信号/邮箱地址/QQ号" {
+            println("微信号/邮箱地址/QQ号")
+        }
+        else if actionSheet.buttonTitleAtIndex(buttonIndex) == "找回微信密码" {
+            println("找回微信密码")
+        }
+        else if actionSheet.buttonTitleAtIndex(buttonIndex) == "找回QQ密码" {
+            println("找回QQ密码")
+        }
+        else if actionSheet.buttonTitleAtIndex(buttonIndex) == "通过短信验证码登录" {
+            println("通过短信验证码登录")
+        }
+        else if actionSheet.buttonTitleAtIndex(buttonIndex) == "前往微信安全中心" {
+            println("前往微信安全中心")
+        }
+    }
     
     
 }
